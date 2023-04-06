@@ -43,4 +43,16 @@ class MachinesController
 
         return redirect('machines')->with('sucesso', 'Máquina cadastrada com sucesso!');
     }
+
+    public function edit(Machine $machine)
+    {
+        return view('machines.edit', compact('machine'));
+    }
+
+    public function update(Request $request, Machine $machine)
+    {
+        $machine->fill($request->all())->save();
+
+        return redirect()->route('machines.index')->with('sucesso', 'Máquina editada com sucesso!');
+    }
 }
