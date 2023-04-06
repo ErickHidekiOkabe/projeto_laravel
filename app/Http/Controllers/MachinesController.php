@@ -18,9 +18,9 @@ class MachinesController
         return view('machines.index')->with('machines', $machines);
     }
 
-    public function show($id)
+    public function show(Machine $machine)
     {
-        echo "<h1>Vizualizar a máquina $id.</h1>";
+        return view('machines.show')->with('machine', $machine);
     }
 
     public function create()
