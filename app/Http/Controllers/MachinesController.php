@@ -8,4 +8,9 @@ class MachinesController
     {
         echo "<h1>Listar as máquinas</h1>";
     }
+
+    public function show($id)
+    {
+        echo "<h1>Vizualizar a máquina $id.</h1>";
+    }
 }

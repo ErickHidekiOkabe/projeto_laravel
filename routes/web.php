@@ -1,5 +1,6 @@
 <?php
 
+use \App\Http\Controllers\MachinesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,4 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\MachinesController::class, 'index']);
+Route::get('/', [MachinesController::class, 'index']);
+
+Route::get('/listar-maquinas', [MachinesController::class, 'index']);
+Route::get('/visualizar-maquina/{id}', [MachinesController::class, 'show']);
