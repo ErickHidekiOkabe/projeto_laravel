@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MachinesController::class, 'index']);
+// Route::get('/', [MachinesController::class, 'index']);
 
-Route::get('/listar-maquinas', [MachinesController::class, 'index']);
-Route::get('/visualizar-maquina/{id}', [MachinesController::class, 'show']);
-Route::get('/cadastrar-maquina', [MachinesController::class, 'create']);
-Route::post('/cadastrar-maquina', [MachinesController::class, 'store']);
+// Route::get('/listar-maquinas', [MachinesController::class, 'index']);
+// Route::get('/visualizar-maquina/{id}', [MachinesController::class, 'show']);
+// Route::get('/cadastrar-maquina', [MachinesController::class, 'create']);
+// Route::post('/cadastrar-maquina', [MachinesController::class, 'store']);
+
+Route::resource('machines', MachinesController::class);
