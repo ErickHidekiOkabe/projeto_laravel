@@ -19,8 +19,16 @@
             <tr>
                 <td>{{$machine->id}}</td>
                 <td>{{$machine->name}}</td>
-                <td><a href="{{ route('machines.show', $machine->id)}}"> Visualizar</a></td>
-                <td><a href="{{ route('machines.edit', $machine->id)}}"> Editar</a></td>
+                <td style="display: flex;">
+                    <button type="button"><a href="{{ route('machines.show', $machine->id)}}"> Visualizar</a></button>&nbsp;
+                    <button type="button"><a href="{{ route('machines.edit', $machine->id)}}"> Editar</a></button>&nbsp;
+
+                    <form action="{{route('machines.destroy', $machine->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Apagar</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>
